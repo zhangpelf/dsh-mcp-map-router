@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Build outputs
+lib/
+dist/
+*.tsbuildinfo
+
+# OS & Logs
+.DS_Store
+*.log
+npm-debug.log*
+
+# Private configurations with real secrets (keep .example.json only)
+mcp_registry.json
+mcp_config.json
+.env
+.env.local

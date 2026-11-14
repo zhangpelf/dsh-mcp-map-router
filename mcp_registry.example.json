@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "description": "MCP Asset Map & Registry Specification (Example Template)",
+  "default_profile": "minimal",
+  "profiles": {
+    "minimal": ["core-evaluator", "system-bridge"],
+    "office": ["core-evaluator", "meeting-assistant"],
+    "research": ["core-evaluator", "deep-research-hub"],
+    "full": ["core-evaluator", "system-bridge", "meeting-assistant", "deep-research-hub"]
+  },
+  "servers": {
+    "core-evaluator": {
+      "displayName": "Core Decision & Evaluator",
+      "category": "core",
+      "description": "Low-latency gatekeeper and rule evaluator for agent routing",
+      "toolsCount": 3,
+      "tags": ["eval", "filter", "decision", "scoring", "core"],
+      "intentPatterns": ["evaluate", "check rules", "score", "filter"],
+      "serverConfig": {
+        "command": "python3",
+        "args": ["/path/to/evaluator_server.py"],
+        "env": {
+          "APP_ENV": "production"
+        }
+      }
+    },
+    "system-bridge": {
+      "displayName": "Host OS & Desktop Bridge",
+      "category": "core",
+      "description": "Local desktop application automation and system status bridge",
+      "toolsCount": 5,
+      "tags": ["desktop", "system", "os", "app-bridge"],
+      "intentPatterns": ["system status", "open app", "desktop notification"],
+      "serverConfig": {
+        "command": "node",
+        "args": ["/path/to/desktop_bridge.js"],
+        "timeout": 30000
+      }
+    },
+    "meeting-assistant": {
+      "displayName": "Enterprise Meeting Assistant",
+      "category": "office",
+      "description": "Meeting scheduling, participant exports, and audio transcript extraction",
+      "toolsCount": 28,
+      "tags": ["meeting", "schedule", "transcripts", "minutes", "calendar", "participants"],
+      "intentPatterns": ["schedule meeting", "meeting transcript", "export attendees", "minutes"],
+      "serverConfig": {
+        "serverUrl": "https://api.example.com/mcp/meeting/v1",
+        "headers": {
+          "Authorization": "Bearer ${MEETING_API_TOKEN}",
+          "X-Client-Version": "v1.0.0"
+        }
+      }
+    },
+    "deep-research-hub": {
+      "displayName": "Autonomous Deep Research Hub",
+      "category": "research",
+      "description": "Large-scale literature ingest, multi-source synthesis, and audio podcast generator",
+      "toolsCount": 35,
+      "tags": ["research", "notebook", "literature", "podcast", "synthesize", "papers"],
+      "intentPatterns": ["research paper", "generate podcast", "notebook summary", "synthesize findings"],
+      "serverConfig": {
+        "command": "research-mcp-cli",
+        "args": ["--port", "8080"],
+        "env": {
+          "RESEARCH_API_KEY": "${RESEARCH_API_KEY}"
+        }
+      }
+    }
+  }
+}

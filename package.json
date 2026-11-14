@@ -1,0 +1,37 @@
+{
+  "name": "dsh-plugin-map-router",
+  "version": "1.0.0",
+  "description": "Map-First JIT Tool Router for DeepSeek Harness (DSH) and Agent Runtimes. Solves Tool Context Tax via Local Asset Map scanning and Just-In-Time MCP tool mounting.",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "mcp_registry.example.json"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "node --test"
+  },
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "mcp",
+    "model-context-protocol",
+    "tool-router",
+    "context-tax",
+    "jit-tools"
+  ],
+  "author": "Open Source Community",
+  "license": "MIT",
+  "peerDependencies": {
+    "cordis": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "cordis": "^3.0.0",
+    "typescript": "^5.3.3"
+  }
+}
