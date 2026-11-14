@@ -6,18 +6,20 @@
   "typings": "lib/index.d.ts",
   "files": [
     "lib",
-    "mcp_registry.example.json"
+    "mcp_registry.example.json",
+    "cordis.patch.yml"
   ],
   "scripts": {
     "build": "tsc -b",
     "test": "node --test"
   },
   "keywords": [
-    "deepseek",
-    "harness",
+    "dsh-plugin",
+    "cordis:plugin",
+    "dsh-market",
+    "deepseek-harness",
     "dsh",
     "cordis",
-    "plugin",
     "mcp",
     "model-context-protocol",
     "tool-router",
@@ -26,6 +28,27 @@
   ],
   "author": "Open Source Community",
   "license": "MIT",
+  "cordis": {
+    "service": {
+      "required": [],
+      "optional": ["mcp"]
+    },
+    "locales": ["zh-CN", "en-US"]
+  },
+  "dsh": {
+    "category": "tools",
+    "tier": "community",
+    "locales": {
+      "zh-CN": {
+        "name": "MCP 资产地图与 JIT 路由",
+        "description": "基于私域资产地图的 MCP 按需即时挂载路由，根除大模型工具上下文税与多轮调用延迟"
+      },
+      "en-US": {
+        "name": "MCP Map-First JIT Router",
+        "description": "Map-First Just-In-Time MCP tool routing for DeepSeek Harness, eliminating Tool Context Tax"
+      }
+    }
+  },
   "peerDependencies": {
     "cordis": "^3.0.0"
   },

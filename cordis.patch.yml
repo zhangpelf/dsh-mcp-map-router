@@ -1,0 +1,10 @@
+# DeepSeek Harness (DSH) / Cordis Patch Specification
+# Copy this block into your cordis.yml or profile loader to activate mcp-map-router
+
+plugins:
+  # Map-First JIT Tool Router for MCP
+  dsh-plugin-map-router:
+    registryPath: './config/mcp_registry.json'
+    autoMount: true
+    scoreThreshold: 3
+    keepAliveTurns: 2

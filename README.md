@@ -1,5 +1,7 @@
 # 🗺️ DSH MCP Map Router
 
+[English](README.md) | [简体中文](README_zh.md)
+
 > **Map-First Just-In-Time (JIT) Tool Routing for DeepSeek Harness (DSH) and Modern AI Agent Runtimes.**
 >
 > 🚀 *Eliminate the Tool Context Tax. Zero prompt bloat, zero hallucinated tool calls, instant execution.*
